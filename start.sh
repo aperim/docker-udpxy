@@ -5,7 +5,7 @@ if [ -z "${PORT}" ]; then
 fi
 
 if [ -z "${UDPXY_BUFFER}" ]; then
-    UDPXY_BUFFER=4096b
+    UDPXY_BUFFER=32Kb
 fi
 
 if [ -z "${UDPXY_RENEW}" ]; then

@@ -34,4 +34,4 @@ COPY --chown=udpxy:udpxy ./start.sh ./
 
 USER udpxy
 
-ENTRYPOINT ./start.sh
+CMD ["./start.sh"]

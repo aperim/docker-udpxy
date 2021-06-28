@@ -9,7 +9,7 @@ if [ -z "${UDPXY_BUFFER}" ]; then
 fi
 
 if [ -z "${UDPXY_RENEW}" ]; then
-    UDPXY_RENEW=0
+    UDPXY_RENEW=60
 fi
 
 echo Starting udpxy on port ${PORT}

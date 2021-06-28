@@ -11,8 +11,8 @@ ARG VCS_REF
 ARG VERSION
 ARG PORT=10000
 ENV PORT=${PORT}
-ENV UDPXY_BUFFER=2048
-ENV UDPXY_RENEW=0
+ENV UDPXY_BUFFER=32Kb
+ENV UDPXY_RENEW=60
 
 LABEL org.opencontainers.image.source https://github.com/aperim/docker-udpxy
 LABEL org.label-schema.build-date=$BUILD_DATE \

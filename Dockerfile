@@ -2,8 +2,8 @@ FROM alpine:latest as builder
 RUN apk update && apk add --virtual build-dependencies build-base gcc wget git tar curl
 RUN curl -LO http://www.udpxy.com/download/udpxy/udpxy-src.tar.gz && \
   tar zxvf ./udpxy-src.tar.gz && \
-  cd udpxy*
-RUN make && make install
+  cd udpxy* && \
+  make && make install
 
 FROM alpine:latest
 ARG BUILD_DATE

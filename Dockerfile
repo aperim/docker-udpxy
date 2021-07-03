@@ -44,8 +44,12 @@ EXPOSE ${PORT}
 RUN adduser -h /udpxy -g "udpxy User" -s /sbin/nologin -D udpxy udpxy
 
 COPY --from=builder /usr/local/bin/udpxy /usr/local/bin/udpxrec /usr/local/bin/
+COPY --from=builder /usr/bin/curl /usr/bin/
 COPY --chown=udpxy:udpxy ./start.sh ./
 
 USER udpxy
+
+HEALTHCHECK --interval=1m --timeout=5s --start-period=1m --retries=2 \
+  CMD curl --fail http://localhost:${PORT}/status || exit 1   
 
 CMD ["./start.sh"]
